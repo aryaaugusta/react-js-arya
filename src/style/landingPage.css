@@ -1,0 +1,87 @@
+.myBG {
+    height: auto;
+    background: url("../assets/images/bg/main_1.jpg");
+    background-size: cover;
+}
+
+.intro {
+    height: 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    text-shadow: 2px 2px white;
+    letter-spacing: 4px;
+}
+
+.trending {
+    height: auto;
+    background: url("../assets/images/bg/scifi.jpg");
+    background-size: cover;
+}
+
+.superhero {
+    height: auto;
+    background: url("../assets/images/bg/spiderman.jpg");
+    background-size: cover;
+}
+
+.images {
+    height: auto;
+}
+
+.navbar-title {
+    line-height: 1;
+    text-shadow: 2px 2px red;
+    letter-spacing: 4px;
+}
+
+.movieWrapper {
+    height: auto;
+}
+
+.movieOverview {
+    text-align: justify;
+}
+
+.movieDate {
+    margin-top: 15px;
+    color: white;
+}
+
+.movieTitle {
+    font-size: 10px;
+    background-color: black;
+    color: antiquewhite;
+    text-align: center;
+}
+
+.movieImage {
+    height: auto;
+    background-color: black;
+    margin: 5px;
+    padding: 1px;
+}
+
+.movieRate {
+    margin-top: 15px;
+    color: red;
+}
+
+.movieSearch {
+    height: 48px;
+    font-size: 24px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 16px;
+    font-weight: bold;
+    width: 475px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
