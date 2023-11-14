@@ -5,7 +5,7 @@
 }
 
 .intro {
-    height: 300px;
+    height: 200px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -19,7 +19,7 @@
     letter-spacing: 4px;
 }
 
-.trending {
+.movies {
     height: auto;
     background: url("../assets/images/bg/scifi.jpg");
     background-size: cover;

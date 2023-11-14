@@ -1,20 +1,20 @@
 import {Card, Col, Container, Image, Row} from "react-bootstrap"
 
-const Movies = ({movies}) => {
+const TvShows = ({tvShows}) => {
     const baseImg = process.env.REACT_APP_IMG_URL
     return (
         <div>
             <Container>
                 <br/>
-                <h1 className="text-white">DISCOVERY MOVIES</h1>
+                <h1 className="text-white">TV SHOWS</h1>
                 <br/>
                 <Row>
-                    {movies.map((result, index) => {
+                    {tvShows.map((result, index) => {
                         return (
-                            <Col md={3} className="movieWrapper" id="movies" key={index}>
+                            <Col md={3} className="movieWrapper" id="tvshows" key={index}>
                                 <Card className="movieImage">
                                     <div className="movieTitle">
-                                        <Card.Title>{result.title}</Card.Title>
+                                        <Card.Title>{result.name}</Card.Title>
                                     </div>
                                     <Image src={`${baseImg}/${result.poster_path}`}
                                            className="images"/>
@@ -27,7 +27,7 @@ const Movies = ({movies}) => {
                                             </div>
                                             <div className="movieDate">
                                                 <Card.Text className="text-left">
-                                                    release: {result.release_date}
+                                                    release: {result.first_air_date}
                                                 </Card.Text>
                                             </div>
                                             <div className="movieRate">
@@ -47,4 +47,4 @@ const Movies = ({movies}) => {
     )
 }
 
-export default Movies
+export default TvShows

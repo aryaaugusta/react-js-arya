@@ -17,3 +17,13 @@ export const getDiscoverMovieList = async () => {
     const discoverMovieList = await axios.get(`${baseUrl}/discover/movie?page=1&api_key=${apiKey}`)
     return discoverMovieList.data.results
 }
+
+export const getTrendingTVShowList = async () => {
+    const trendingTvShowList = await axios.get(`${baseUrl}/discover/tv?page=1&api_key=${apiKey}&with_original_language=en`)
+    return trendingTvShowList.data.results
+}
+
+export const searchTv = async (x) => {
+    const searchTv = await axios.get(`${baseUrl}/search/tv?query=${x}&page=1&api_key=${apiKey}`)
+    return searchTv.data
+}
