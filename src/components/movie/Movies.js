@@ -27,12 +27,12 @@ const Movies = ({movies}) => {
                                             </div>
                                             <div className="movieDate">
                                                 <Card.Text className="text-left">
-                                                    release: {result.release_date}
+                                                    release: {result.releaseDate}
                                                 </Card.Text>
                                             </div>
                                             <div className="movieRate">
                                                 <Card.Text className="text-left">
-                                                    rate: {result.vote_average}
+                                                    rate: {result.voteAverage}
                                                 </Card.Text>
                                             </div>
                                         </div>

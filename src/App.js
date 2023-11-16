@@ -6,8 +6,9 @@ import TvShows from "./components/tvshows/TvShows"
 import "./style/landingPage.css"
 import React, {useEffect, useState} from "react";
 import Pagination from "./components/pagination/Pagination";
-import {getDiscoverMovieList, searchMovie, getTrendingTVShowList, searchTv} from './api'
+import {getDiscoverMovieList, searchMovie, getTrendingTVShowList, searchTv, getAllMovies} from './api/api'
 import {Container} from "react-bootstrap";
+import api from './api/axiosConfig'
 
 function App() {
     const [movies, setMovies] = useState([]);
@@ -18,7 +19,10 @@ function App() {
     const [hiddenTvShows, setHiddenTvShows] = useState(false);
 
     useEffect(() => {
-        getDiscoverMovieList().then((result) => {
+        /*getDiscoverMovieList().then((result) => {
+            setMovies(result)
+        })*/
+        getAllMovies().then((result) => {
             setMovies(result)
         })
         getTrendingTVShowList().then((result) => {
