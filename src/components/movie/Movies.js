@@ -6,6 +6,7 @@ const Movies = ({movies}) => {
         <div>
             <Container>
                 <br/>
+                <br/>
                 <h1 className="text-white">DISCOVERY MOVIES</h1>
                 <br/>
                 <Row>
@@ -16,7 +17,7 @@ const Movies = ({movies}) => {
                                     <div className="movieTitle">
                                         <Card.Title>{result.title}</Card.Title>
                                     </div>
-                                    <Image src={`${baseImg}/${result.poster_path}`}
+                                    <Image src={`${baseImg}/${result.posterPath}`}
                                            className="images"/>
                                     <div className="bg-dark">
                                         <div className="p-2 m-1 text-white">

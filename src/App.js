@@ -9,6 +9,10 @@ import Pagination from "./components/pagination/Pagination";
 import {getDiscoverMovieList, searchMovie, getTrendingTVShowList, searchTv, getAllMovies} from './api/api'
 import {Container} from "react-bootstrap";
 import api from './api/axiosConfig'
+import {Routes, Route} from 'react-router-dom';
+import Home from './components/home/Home';
+import Trailer from './components/trailer/Trailer';
+import NotFound from './components/notFound/NotFound';
 
 function App() {
     const [movies, setMovies] = useState([]);
@@ -95,7 +99,7 @@ function App() {
 
     return (
         <div>
-            <div className="myBG">
+            {/*<div className="myBG">
                 <NavigationBar/>
                 <Intro/>
                 <Container className="text-center d-flex justify-content-center align-items-center">
@@ -105,6 +109,19 @@ function App() {
             </div>
             <div className="movies">
                 <ShowMovieTvResults/>
+            </div>*/}
+            <div className="myBG">
+                <NavigationBar/>
+                <Routes>
+                    <Route path="/">
+                        <Route path="/" element={<Home movies={movies}/>}/>
+                        <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}/>
+                        <Route path="*" element={<NotFound/>}/>
+                    </Route>
+                </Routes>
+                <div className="movies">
+                    <ShowMovieTvResults/>
+                </div>
             </div>
         </div>
     )

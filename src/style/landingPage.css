@@ -21,7 +21,8 @@
 
 .movies {
     height: auto;
-    background: url("../assets/images/bg/scifi.jpg");
+    /*background: url("../assets/images/bg/scifi.jpg");*/
+    background-color: black;
     background-size: cover;
 }
 
