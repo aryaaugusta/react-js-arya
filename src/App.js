@@ -6,13 +6,21 @@ import TvShows from "./components/tvshows/TvShows"
 import "./style/landingPage.css"
 import React, {useEffect, useState} from "react";
 import Pagination from "./components/pagination/Pagination";
-import {getDiscoverMovieList, searchMovie, getTrendingTVShowList, searchTv, getAllMovies} from './api/api'
+import {
+    getDiscoverMovieList,
+    searchMovie,
+    getTrendingTVShowList,
+    searchTv,
+    getAllMovies,
+    searchMovieNostra
+} from './api/api'
 import {Container} from "react-bootstrap";
 import api from './api/axiosConfig'
 import {Routes, Route} from 'react-router-dom';
 import Home from './components/home/Home';
 import Trailer from './components/trailer/Trailer';
 import NotFound from './components/notFound/NotFound';
+import styled from "styled-components";
 
 function App() {
     const [movies, setMovies] = useState([]);
@@ -51,18 +59,17 @@ function App() {
             }
         }
         if (x.length > 3) {
-            const query = await searchMovie(x)
-            setMovies(query.results)
+            const query = await searchMovieNostra(x)
+            setMovies(query.contents)
         }
         if (x.length === 0) {
-            const movieList = await getDiscoverMovieList()
+            const movieList = await getAllMovies()
             setMovies(movieList)
         }
     }
 
     const ShowMovieTvResults = () => {
         if (window.location.pathname === '/movies') {
-            console.log('masuk movie result')
             return (
                 <div hidden={hiddenMovies}>
                     <DiscoverMovies movies={currentPostsMovie}/>
@@ -73,7 +80,6 @@ function App() {
                 </div>
             )
         } else if (window.location.pathname === '/tvshows') {
-            console.log('masuk tv show result')
             return (
                 <div hidden={hiddenTvShows}>
                     <TvShows tvShows={currentPostsTvShow}/>
@@ -84,7 +90,6 @@ function App() {
                 </div>
             )
         } else {
-            console.log('masuk discover result')
             return (
                 <div hidden={hiddenMovies}>
                     <DiscoverMovies movies={currentPostsMovie}/>
@@ -99,19 +104,18 @@ function App() {
 
     return (
         <div>
-            {/*<div className="myBG">
-                <NavigationBar/>
-                <Intro/>
-                <Container className="text-center d-flex justify-content-center align-items-center">
-                    <input placeholder="search your movie or tv shows here..." className="movieSearch"
-                           onChange={({target}) => searchMoviesOrTv(target.value)}/>
-                </Container>
-            </div>
-            <div className="movies">
-                <ShowMovieTvResults/>
-            </div>*/}
             <div className="myBG">
-                <NavigationBar/>
+                <NavigationBar movies={movies}/>
+                <Intro/>
+                <br/>
+                <Container className="text-center d-flex justify-content-center align-items-center">
+                    <div className="searchBox">
+                        <img className="searchIcon" src="/react-movie-arya/search-icon.svg"/>
+                        <input placeholder="search your movies here" className="movieSearch"
+                               onChange={({target}) => searchMoviesOrTv(target.value)}/>
+                    </div>
+                </Container>
+                <br/>
                 <Routes>
                     <Route path="/">
                         <Route path="/" element={<Home movies={movies}/>}/>

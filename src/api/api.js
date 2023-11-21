@@ -33,3 +33,10 @@ export const getAllMovies = async () => {
     const allMovies = await api.get("/api/nostramovie/allMovie")
     return allMovies.data
 }
+
+export const searchMovieNostra = async (search) => {
+    const searchMovie = await api.post("/api/nostramovie/getMovieByTitle", {
+        search: search
+    })
+    return searchMovie.data
+}

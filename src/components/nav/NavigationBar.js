@@ -5,16 +5,6 @@ import {NavLink} from "react-router-dom";
 
 const NavigationBar = () => {
     return (
-        // <div className="navbar-title">
-        /*<Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-            <Container fluid>
-                <Navbar.Brand href="/">ARYA AUGUSTA FILMS</Navbar.Brand>
-                <Nav>
-                    <Nav.Link href="/movies">MOVIES</Nav.Link>
-                    <Nav.Link href="/tvshows">TV SHOWS</Nav.Link>
-                </Nav>
-            </Container>
-        </Navbar>*/
         <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
             <Container fluid>
                 <Navbar.Brand href="/" style={{"color": 'red'}}>

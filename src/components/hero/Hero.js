@@ -19,7 +19,6 @@ const Hero = ({movies}) => {
             <Carousel>
                 {
                     movies?.map((movie) => {
-                        console.log({movie})
                         return (
                             <Paper key={movie.id}>
                                 <div className='movie-card-container'>
