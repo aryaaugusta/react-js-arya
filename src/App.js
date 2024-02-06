@@ -6,21 +6,12 @@ import TvShows from "./components/tvshows/TvShows"
 import "./style/landingPage.css"
 import React, {useEffect, useState} from "react";
 import Pagination from "./components/pagination/Pagination";
-import {
-    getDiscoverMovieList,
-    searchMovie,
-    getTrendingTVShowList,
-    searchTv,
-    getAllMovies,
-    searchMovieNostra
-} from './api/api'
+import {getAllMovies, getTrendingTVShowList, searchMovieNostra, searchTv} from './api/api'
 import {Container} from "react-bootstrap";
-import api from './api/axiosConfig'
-import {Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/home/Home';
 import Trailer from './components/trailer/Trailer';
 import NotFound from './components/notFound/NotFound';
-import styled from "styled-components";
 
 function App() {
     const [movies, setMovies] = useState([]);
@@ -29,13 +20,14 @@ function App() {
     const [postsPerPage] = useState(8);
     const [hiddenMovies, setHiddenMovies] = useState(false);
     const [hiddenTvShows, setHiddenTvShows] = useState(false);
+    const [selectedMovie, onMovieSelect] = useState();
 
     useEffect(() => {
         /*getDiscoverMovieList().then((result) => {
             setMovies(result)
         })*/
         getAllMovies().then((result) => {
-            setMovies(result)
+            setMovies(result.rows)
         })
         getTrendingTVShowList().then((result) => {
             setTvShows(result)
@@ -116,13 +108,13 @@ function App() {
                     </div>
                 </Container>
                 <br/>
-                <Routes>
-                    <Route path="/">
+                <Router>
+                    <Routes>
                         <Route path="/" element={<Home movies={movies}/>}/>
                         <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}/>
                         <Route path="*" element={<NotFound/>}/>
-                    </Route>
-                </Routes>
+                    </Routes>
+                </Router>
                 <div className="movies">
                     <ShowMovieTvResults/>
                 </div>
