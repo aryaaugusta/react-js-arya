@@ -30,7 +30,11 @@ export const searchTv = async (x) => {
 }
 
 export const getAllMovies = async () => {
-    const allMovies = await api.get("/api/nostramovie/allMovie")
+    const allMovies = await api.post("api/nostramovie/movie/search", {
+        filters: [],
+        sorts: [],
+        page: 0
+    })
     return allMovies.data
 }
 
