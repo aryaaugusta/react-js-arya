@@ -39,8 +39,18 @@ export const getAllMovies = async () => {
 }
 
 export const searchMovieNostra = async (search) => {
-    const searchMovie = await api.post("/api/nostramovie/getMovieByTitle", {
-        search: search
+
+    const searchMovie = await api.post("api/nostramovie/movie/search", {
+        filters: [{
+            "field": "title",
+            "operator": "LIKE",
+            "value": search
+        }],
+        sorts: [{
+            "field": "title",
+            "sort": "ASC"
+        }],
+        page: 0
     })
     return searchMovie.data
 }
