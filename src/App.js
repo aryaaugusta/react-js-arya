@@ -8,7 +8,7 @@ import React, {useEffect, useState} from "react";
 import Pagination from "./components/pagination/Pagination";
 import {getAllMovies, getTrendingTVShowList, searchMovieNostra, searchTv} from './api/api'
 import {Container} from "react-bootstrap";
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Home from './components/home/Home';
 import Trailer from './components/trailer/Trailer';
 import NotFound from './components/notFound/NotFound';
@@ -52,11 +52,11 @@ function App() {
         }
         if (x.length > 3) {
             const query = await searchMovieNostra(x)
-            setMovies(query.contents)
+            setMovies(query.rows)
         }
         if (x.length === 0) {
             const movieList = await getAllMovies()
-            setMovies(movieList)
+            setMovies(movieList.rows)
         }
     }
 
