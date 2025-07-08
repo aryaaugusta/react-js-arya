@@ -8,7 +8,7 @@ const NavigationBar = () => {
         <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
             <Container fluid>
                 <Navbar.Brand href="/" style={{"color": 'red'}}>
-                    <FontAwesomeIcon icon={faVideoCamera}/> THE AUGUSTA FILMS
+                    <FontAwesomeIcon icon={faVideoCamera}/> NOSTRA MOVIES
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll"/>
                 {/*<Navbar.Collapse id="navbarScroll">*/}
