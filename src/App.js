@@ -111,7 +111,7 @@ function App() {
                 <Router>
                     <Routes>
                         <Route path="/" element={<Home movies={movies}/>}/>
-                        <Route path="/Trailer/:ytTrailerId" element={<Trailer/>}/>
+                        <Route path="/" element={<Trailer/>}/>
                         <Route path="*" element={<NotFound/>}/>
                     </Routes>
                 </Router>

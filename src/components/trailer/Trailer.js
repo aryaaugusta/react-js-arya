@@ -4,14 +4,14 @@ import './Trailer.css';
 import {faClose} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const Trailer = ({ ytTrailerId, onClose }) => {
+const Trailer = ({ytTrailerId, onClose}) => {
     if (!ytTrailerId) return null;
 
     return (
         <div className="trailer-modal-overlay">
             <div className="trailer-modal-content">
                 {/*<button className="close-button" onClick={onClose}>Close</button>*/}
-                <FontAwesomeIcon className="close-button" icon={faClose} onClick={onClose} />
+                <FontAwesomeIcon className="close-button" icon={faClose} onClick={onClose}/>
                 <ReactPlayer
                     controls={true}
                     playing={true}

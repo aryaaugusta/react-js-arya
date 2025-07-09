@@ -1,12 +1,16 @@
 .trailer-modal-overlay {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
 }
+
 .trailer-modal-content {
     position: relative;
     background: #111;
@@ -17,16 +21,18 @@
     height: 90vh;
     box-shadow: 0 0 30px #000;
 }
+
 .close-button {
     position: absolute;
-    top: 10px; right: 10px;
+    top: 10px;
+    right: 10px;
     background: #fff;
     border: none;
     padding: 8px 12px;
     cursor: pointer;
     font-size: 16px;
     border-radius: 4px;
-    z-index: 10;
+    z-index: 100;
 }
 
 /*
